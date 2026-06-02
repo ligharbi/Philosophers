@@ -21,7 +21,7 @@ bool	fammish(t_philo *ph)
 	pthread_mutex_lock(&ph->data->meals_mutex);
 	last_meal = ph->last_meal_time;
 	pthread_mutex_unlock(&ph->data->meals_mutex);
-	if (current_time - last_meal > ph->data->time_to_die)
+	if (current_time - last_meal >= ph->data->time_to_die)
 		return (true);
 	return (false);
 }

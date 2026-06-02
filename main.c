@@ -59,6 +59,8 @@ void	parse_arguments(t_data *data, char **av, int ac)
 
 void	parse_arguments_div(t_data *data, char **av, int i)
 {
+	int	value;
+
 	if (i == 3)
 	{
 		data->time_to_eat = ft_atoi(av[i]);
@@ -72,7 +74,13 @@ void	parse_arguments_div(t_data *data, char **av, int i)
 			msg(i);
 	}
 	else if (i == 5)
-		data->num_meals = ft_atoi(av[i]);
+	{
+		value = ft_atoi(av[i]);
+		if (value <= 0)
+			msg(i);
+		else
+			data->num_meals = value;
+	}
 }
 
 void	msg(int i)

@@ -72,6 +72,7 @@ void	eat(t_philo *ph);
 void	sleep_think(t_philo *ph);
 bool	set_simulation_running(t_data *data, bool value);
 bool	get_simulation_runnig(t_data *data);
+void	*monitor_philosophers(void *data_ptr);
 int		start_simulation(t_data *data, t_philo *philosophers);
 long	get_time_ms(void);
 int		free_the_thinkers(t_philo *philosophers);
